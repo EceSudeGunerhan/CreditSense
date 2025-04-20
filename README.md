@@ -21,7 +21,7 @@ pip install fastapi uvicorn pandas scikit-learn joblib
 
 ### 2. Uygulamayı Başlat
 ```bash
-uvicorn main:app --reload
+uvicorn app:app --reload
 ```
 
 ### 3. Swagger Arayüzü
