@@ -80,8 +80,8 @@ Bu dosyalar, `main.py` ile aynı dizine kaydedilir.
 
 ##  Dosya Yapısı
 ```
-project_folder/
-├── main.py
+FastAPI/
+├── app.py
 ├── output.csv
 └── svm_model.pkl / scaler.pkl / feature_order.pkl  (retrain ile oluşur)
 ```
