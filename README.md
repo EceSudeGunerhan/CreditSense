@@ -31,46 +31,46 @@ Uygulama, kredi başvuru değerlendirmesi için REST API desteği sağlar. Aşa�
 
 ####  `POST /predict`
 
-* **Açıklama:** Başvuru bilgilerine göre kredi onay durumu ve risk skoru hesaplar.
-* **Girdi:** Başvuru bilgileri (JSON formatında)
-* **Çıktı:**
+**Açıklama:** Başvuru bilgilerine göre kredi onay durumu ve risk skoru hesaplar.
+**Girdi:** Başvuru bilgileri (JSON formatında)
+**Çıktı:**
 
-  * `approved`: Onay durumu (True/False)
-  * `prediction_label`: “Kredi Verilebilir” veya “Kredi Verilemez”
-  * `risk_probability`: Risk oranı
-  * `message`: Kullanıcıya yönelik açıklama
+   `approved`: Onay durumu (True/False)
+   `prediction_label`: “Kredi Verilebilir” veya “Kredi Verilemez”
+   `risk_probability`: Risk oranı
+   `message`: Kullanıcıya yönelik açıklama
 
 ####  `POST /explain`
 
-* **Açıklama:** SHAP algoritması kullanılarak kararın nedenlerini açıklar.
-* **Girdi:** Başvuru bilgileri (JSON formatında)
-* **Çıktı:**
+**Açıklama:** SHAP algoritması kullanılarak kararın nedenlerini açıklar.
+**Girdi:** Başvuru bilgileri (JSON formatında)
+**Çıktı:**
 
-  * `explanation`: Metinsel karar açıklaması
-  * `shap_chart`: Özellik katkılarını içeren grafik verisi (`features`, `values` listeleri)
+   `explanation`: Metinsel karar açıklaması
+   `shap_chart`: Özellik katkılarını içeren grafik verisi (`features`, `values` listeleri)
 
 ####  `POST /ask`
 
-* **Açıklama:** Başvuru verileri ve model çıktısına göre doğal dilde soruları yanıtlar.
-* **Girdi:**
+**Açıklama:** Başvuru verileri ve model çıktısına göre doğal dilde soruları yanıtlar.
+**Girdi:**
 
-  * `question`: Kullanıcının sorusu
-  * `features`: Başvuru bilgileri
-* **Çıktı:**
+  `question`: Kullanıcının sorusu
+  `features`: Başvuru bilgileri
+**Çıktı:**
 
-  * `response`: LLM tarafından üretilen yanıt
+  `response`: LLM tarafından üretilen yanıt
 
 ####  `GET /features`
 
-* **Açıklama:** Modelin beklediği özellik listesini döner.
+**Açıklama:** Modelin beklediği özellik listesini döner.
 
 ####  `GET /model_info`
 
-* **Açıklama:** Model hakkında genel bilgi verir (tipi, özellik sayısı, durum).
+**Açıklama:** Model hakkında genel bilgi verir (tipi, özellik sayısı, durum).
 
 ####  `GET /healthcheck`
 
-* **Açıklama:** Servisin ayakta olup olmadığını kontrol eder.
+**Açıklama:** Servisin ayakta olup olmadığını kontrol eder.
 
 
 ### 4.  SHAP Görselleştirme
