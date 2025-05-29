@@ -57,7 +57,7 @@ with tab1:
         st.info("Formu doldurup tahmin etmelisiniz.")
 
 with tab2:
-    st.subheader("Karar Açıklaması (SHAP)")
+    st.subheader("Karar Açıklaması")
     if "input_data" in st.session_state:
         try:
             shap_res = requests.post("http://localhost:8000/explain", json=st.session_state["input_data"])
@@ -75,7 +75,7 @@ with tab2:
         st.info("Tahmin yaptıktan sonra açıklama görüntülenebilir.")
 
 with tab3:
-    st.subheader(" Kredi Asistanı (LLM destekli)")
+    st.subheader(" Kredi Asistanı")
     if "chat_history" not in st.session_state:
         st.session_state["chat_history"] = []
 
