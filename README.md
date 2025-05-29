@@ -25,15 +25,53 @@ CreditSense, bireysel kredi başvurularının risk durumunu değerlendiren, kara
   * Model eğitimi & test değerlendirmesi (accuracy, recall, precision)
   * Model dosyası: `final_model.pkl`
 
-### 3.  API Servisi (FastAPI)
+###  3. API Servisi (FastAPI)
 
-* Ana uç nokta: `/predict`
+Uygulama, kredi başvuru değerlendirmesi için REST API desteği sağlar. Aşağıda mevcut uç noktalar ve işlevleri listelenmiştir:
 
-  * Girdi: Başvuru bilgileri (JSON formatında)
-  * Çıktı: Onay durumu, risk oranı ve mesaj
-* Diğer uç noktalar:
+####  `POST /predict`
 
-  * `/explain`: SHAP ile karar açıklamaları (özellik bazlı katkılar)
+* **Açıklama:** Başvuru bilgilerine göre kredi onay durumu ve risk skoru hesaplar.
+* **Girdi:** Başvuru bilgileri (JSON formatında)
+* **Çıktı:**
+
+  * `approved`: Onay durumu (True/False)
+  * `prediction_label`: “Kredi Verilebilir” veya “Kredi Verilemez”
+  * `risk_probability`: Risk oranı
+  * `message`: Kullanıcıya yönelik açıklama
+
+####  `POST /explain`
+
+* **Açıklama:** SHAP algoritması kullanılarak kararın nedenlerini açıklar.
+* **Girdi:** Başvuru bilgileri (JSON formatında)
+* **Çıktı:**
+
+  * `explanation`: Metinsel karar açıklaması
+  * `shap_chart`: Özellik katkılarını içeren grafik verisi (`features`, `values` listeleri)
+
+####  `POST /ask`
+
+* **Açıklama:** Başvuru verileri ve model çıktısına göre doğal dilde soruları yanıtlar.
+* **Girdi:**
+
+  * `question`: Kullanıcının sorusu
+  * `features`: Başvuru bilgileri
+* **Çıktı:**
+
+  * `response`: LLM tarafından üretilen yanıt
+
+####  `GET /features`
+
+* **Açıklama:** Modelin beklediği özellik listesini döner.
+
+####  `GET /model_info`
+
+* **Açıklama:** Model hakkında genel bilgi verir (tipi, özellik sayısı, durum).
+
+####  `GET /healthcheck`
+
+* **Açıklama:** Servisin ayakta olup olmadığını kontrol eder.
+
 
 ### 4.  SHAP Görselleştirme
 
@@ -89,16 +127,15 @@ CreditSense/
 
 ---
 
-##  Yayınlama
+4. Yayınlama
 
-* Hugging Face Spaces (Streamlit tabanlı web arayüzü)
-* GitHub Proje Linki: [https://github.com/EceSudeGunerhan](https://github.com/EceSudeGunerhan)
+Streamlit Cloud üzerinden canlı yayın: https://creditsense.streamlit.app
 
 ---
 
 ##  Güvenlik
 
-* `.env` dosyasında gizli API anahtarları
+* `.streamlit` dosyasında gizli API anahtarları
 * LLM çağrıları güvenli ve sınırlı istek üzerinden yapılır
 
 ---
@@ -110,5 +147,3 @@ CreditSense/
 Süleyman Demirel Üniversitesi - Bilgisayar Mühendisliği
 
 ---
-
-CreditSense ile kredi değerlendirmelerini daha şeffaf, erişilebilir ve kullanıcı dostu hale getirmeyi amaçlıyoruz. 
