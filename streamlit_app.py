@@ -2,15 +2,12 @@ import streamlit as st
 import pandas as pd
 import requests
 
-# Sayfa ayarları
 st.set_page_config(page_title="CreditSense", layout="wide")
 st.title("CreditSense - Kredi Onay Tahmini ve Yardımcı Asistan")
 
-# Anahtarlar secrets.toml'dan geliyor
 OPENROUTER_API_KEY = st.secrets["OPENROUTER_API_KEY"]
 OPENROUTER_API_URL = st.secrets["OPENROUTER_API_URL"]
 
-# Sol Panel: Kullanıcı Girdileri
 st.sidebar.header("Kredi Başvuru Formu")
 
 with st.sidebar.form("credit_form"):
@@ -47,7 +44,6 @@ if submitted:
 
 tab1, tab2, tab3 = st.tabs(["Tahmin Sonucu", "Karar Açıklaması", "Kredi Asistanı"])
 
-# TAB 1
 with tab1:
     st.subheader("Model Tahmini")
     if "input_data" in st.session_state:
@@ -60,7 +56,6 @@ with tab1:
     else:
         st.info("Formu doldurup tahmin etmelisiniz.")
 
-# TAB 2
 with tab2:
     st.subheader("Karar Açıklaması (SHAP)")
     if "input_data" in st.session_state:
@@ -79,7 +74,6 @@ with tab2:
     else:
         st.info("Tahmin yaptıktan sonra açıklama görüntülenebilir.")
 
-# TAB 3
 with tab3:
     st.subheader(" Kredi Asistanı (LLM destekli)")
     if "chat_history" not in st.session_state:
