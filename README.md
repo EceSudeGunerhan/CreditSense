@@ -143,7 +143,7 @@ CreditSense/
 
 ##  Geliştirici
 
-* **Ece Sude GÜNERHAN**
+**Ece Sude GÜNERHAN**
 Süleyman Demirel Üniversitesi - Bilgisayar Mühendisliği
 
 ---
