@@ -129,7 +129,7 @@ CreditSense/
 
 4. Yayınlama
 
-Streamlit Cloud üzerinden canlı yayın: https://creditsense.streamlit.app
+* Streamlit Cloud üzerinden canlı yayın: https://creditsense.streamlit.app
 
 ---
 
