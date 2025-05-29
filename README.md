@@ -1,9 +1,10 @@
  #  CreditSense - Kredi Riski Tahmin ve Açıklama Sistemi
 
-CreditSense, bireysel kredi başvurularının risk durumunu değerlendiren, kararların nedenlerini açıklayan ve kullanıcıya özel öneriler sunan yapay zeka destekli bir web uygulamasıdır. FastAPI, Streamlit, SHAP ve LLM teknolojilerinin birleşimiyle oluşturulmuştur.
+CreditSense, bireysel kredi başvurularının risk durumunu değerlendiren, kararların nedenlerini açıklayan ve kullanıcıya özel öneriler sunan yapay zeka destekli bir web uygulamasıdır. FastAPI, Streamlit, SHAP ve LLM teknolojilerinin birleşimiyle oluşturulmuştur. Aşağıdaki butona tıklayarak siteye ulaşılır.
 
 ---
 [![Streamlit Uygulamasını Görüntüle](https://img.shields.io/badge/Streamlit-Live%20App-brightgreen?logo=streamlit)](https://creditsense.streamlit.app/)
+
 ---
 
 ##  Proje Bileşenleri
