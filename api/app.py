@@ -8,7 +8,6 @@ from pathlib import Path
 import requests
 import os
 
-# Streamlit secrets için (env yerine)
 OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
 OPENROUTER_API_URL = "https://openrouter.ai/api/v1/chat/completions"
 
