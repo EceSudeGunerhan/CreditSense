@@ -133,62 +133,27 @@ CreditSense/
 
 ---
 
-Örnek Girdiler
-Tahmin servisine gönderilecek JSON örnekleri:
+### Örnek Girdiler Tahmin servisine gönderilecek JSON örnekleri:
 
-onaylanmasını beklediğimiz başvuru örneği:
+---
 
-{
-  "LOAN": 10000,
-  "MORTDUE": 50000,
-  "VALUE": 90000,
-  "REASON": "HomeImp",
-  "JOB": "ProfExe",
-  "YOJ": 12,
-  "DEROG": 0,
-  "DELINQ": 0,
-  "CLAGE": 250,
-  "NINQ": 1,
-  "CLNO": 30,
-  "DEBTINC": 28.0
-}
+**onaylanmasını beklediğimiz başvuru örneği:**
 
-reddedilmesini beklediğimiz başvuru örneği:
+```
+{ "LOAN": 10000, "MORTDUE": 50000, "VALUE": 90000, "REASON": "HomeImp", "JOB": "ProfExe", "YOJ": 12, "DEROG": 0, "DELINQ": 0, "CLAGE": 250, "NINQ": 1, "CLNO": 30, "DEBTINC": 28.0 }
+```
 
-{
-  "LOAN": 45000,
-  "MORTDUE": 150000,
-  "VALUE": 100000,
-  "REASON": "DebtCon",
-  "JOB": "Other",
-  "YOJ": 1,
-  "DEROG": 5,
-  "DELINQ": 3,
-  "CLAGE": 40,
-  "NINQ": 5,
-  "CLNO": 10,
-  "DEBTINC": 55.0
-}
+**reddedilmesini beklediğimiz başvuru örneği:**
 
-Soru-cevap (LLM destekli kredi asistanı) çağrısı örneği:
+```
+{ "LOAN": 45000, "MORTDUE": 150000, "VALUE": 100000, "REASON": "DebtCon", "JOB": "Other", "YOJ": 1, "DEROG": 5, "DELINQ": 3, "CLAGE": 40, "NINQ": 5, "CLNO": 10, "DEBTINC": 55.0 }
+```
 
-{
-  "question": "Neden kredim onaylanmadı?",
-  "features": {
-    "LOAN": 45000,
-    "MORTDUE": 150000,
-    "VALUE": 100000,
-    "REASON": "DebtCon",
-    "JOB": "Other",
-    "YOJ": 1,
-    "DEROG": 5,
-    "DELINQ": 3,
-    "CLAGE": 40,
-    "NINQ": 5,
-    "CLNO": 10,
-    "DEBTINC": 55.0
-  }
-}
+**Soru-cevap (LLM destekli kredi asistanı) çağrısı örneği:**
+
+```
+{ "question": "Neden kredim onaylanmadı?", "features": { "LOAN": 45000, "MORTDUE": 150000, "VALUE": 100000, "REASON": "DebtCon", "JOB": "Other", "YOJ": 1, "DEROG": 5, "DELINQ": 3, "CLAGE": 40, "NINQ": 5, "CLNO": 10, "DEBTINC": 55.0 } }
+```
 
 ---
 
