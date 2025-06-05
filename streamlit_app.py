@@ -48,7 +48,7 @@ with tab1:
     st.subheader("Model Tahmini")
     if "input_data" in st.session_state:
         try:
-            response = requests.post("http://localhost:8000/predict", json=st.session_state["input_data"])
+            response = requests.post("https://creditsense.onrender.com/predict", json=st.session_state["input_data"])
             prediction = response.json()["prediction_label"]
             st.success(f"Sonuç: {prediction}")
         except Exception as e:
@@ -60,7 +60,7 @@ with tab2:
     st.subheader("Karar Açıklaması")
     if "input_data" in st.session_state:
         try:
-            shap_res = requests.post("http://localhost:8000/explain", json=st.session_state["input_data"])
+            shap_res = requests.post("https://creditsense.onrender.com/explain", json=st.session_state["input_data"])
             shap_json = shap_res.json()
             st.markdown("### Model Açıklaması")
             st.code(shap_json["explanation"], language="markdown")
