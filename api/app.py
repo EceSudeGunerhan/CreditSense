@@ -52,6 +52,10 @@ def model_info():
         "status": "ready"
     }
 
+@app.get("/")
+def root():
+    return {"message": "CreditSense API yayında."}
+
 @app.get("/features")
 def get_features():
     return {"expected_features": feature_columns}
